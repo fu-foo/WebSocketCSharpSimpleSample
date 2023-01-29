@@ -1,0 +1,62 @@
+<html>
+	<body>
+		<input type="text" name="text" id='textMessage' autocomplete='off'>
+		<input type="button" value="送信" onclick="clickMessageSend()">
+		<table id="message">
+			<tr>
+				<th>受信データ</th>
+			</tr>
+		</table>
+	</body>
+
+<script>
+
+addMessage('再接続はF5更新で行ってください',0);
+
+// 接続
+addMessage('接続中...',0);
+var connection = new WebSocket('ws://localhost:8080/');
+
+//通信が接続された場合
+connection.onopen = function(e) { 
+	addMessage('接続しました',0);
+}
+ 
+//エラーが発生した場合
+connection.onerror = function(error) {
+	addMessage('接続できません',0);
+}
+ 
+//メッセージを受け取った場合
+connection.onmessage = function(e) { 
+	addMessage(e.data,1);
+}
+  
+//通信が切断された場合
+connection.onclose = function() { 
+	addMessage('通信が切断されました',0);
+}
+// 送信
+function clickMessageSend() {
+	connection.send(document.getElementById('textMessage').value);
+	addMessage(document.getElementById('textMessage').value,1);
+}
+
+// 送受信などの出力
+function addMessage(message, type) {
+	// エレメント作成
+	let messagetable = document.getElementById('message');
+	let child1 = document.createElement("tr");
+	let child2 = document.createElement("td");
+	// 日付作成
+	var date_obj = new Date();
+	let line = '[' + date_obj.toString() + ']';
+	// 送受信作成
+	if(type == '1') {line += '[→受信]'};
+	if(type == '2') {line += '[←送信]'};
+	// messagetableに追加
+	child1.append(line+ message,child2);
+	messagetable.append(child1);
+}
+	</script>
+</html>
