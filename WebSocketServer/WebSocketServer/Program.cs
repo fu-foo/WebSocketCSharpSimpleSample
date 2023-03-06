@@ -50,7 +50,7 @@ namespace WebSocketServer
 		{
 			// ポート8080でWebSocket受付
 			var httpListener = new HttpListener();
-			httpListener.Prefixes.Add("http://localhost:8080/");
+			httpListener.Prefixes.Add("http://+:8080/");
 			httpListener.Start();
 
 			Console.WriteLine("WebSocket受付開始");
