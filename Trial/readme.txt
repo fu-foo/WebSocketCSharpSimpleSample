@@ -1,8 +1,0 @@
-お試し用です。
-
-1)TrialSet.zipを展開。
-2)WebSocketServer.exe起動でWebSocketServer開始
-3)WebSocketClient.htmlを任意のブラウザーで開いてWebSocketClient開始
-
-サーバー側ではテキスト入力＋エンターでクライアント側にテキスト送信、
-クライアント側ではテキスト入力＋送信ボタン押下でサーバー側にテキスト送信になります。
