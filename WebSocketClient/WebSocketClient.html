@@ -39,7 +39,7 @@ connection.onclose = function() {
 // 送信
 function clickMessageSend() {
 	connection.send(document.getElementById('textMessage').value);
-	addMessage(document.getElementById('textMessage').value,1);
+	addMessage(document.getElementById('textMessage').value,2);
 }
 
 // 送受信などの出力
