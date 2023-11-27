@@ -9,6 +9,6 @@ WebSocketサーバー：(.Net4.8)C# WebSocketクライアント：HTML+JavaSrcip
 C#でのWebSocketServerサンプルです。クライアントと1対1での通信を想定しています。
 
 ## WebSocketClient
-HTML+JavaScriptでのWebSocketクラインとサンプルです。（※要管理者権限）WebSocketServerを起動してからこのHTMLをブラウザーで開いてください。
+HTML+JavaScriptでのWebSocketクライントサンプルです。（※要管理者権限）WebSocketServerを起動してからこのHTMLをブラウザーで開いてください。
 
 
